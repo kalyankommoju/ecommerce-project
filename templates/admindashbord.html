@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin dashbord</title>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel='stylesheet' href="{{url_for('static',filename='style.css')}}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <div class="ad_sigup" style="margin-top: 5%;">
+    <h1 style="display: flex; justify-content: center;"><i class="uil uil-user-check"></i> Hi {{
+      session.get('adminuser') }}</h1>
+    <div class="ad_form">
+      <a href="{{url_for('additems')}}" class="bord_butt"><button class="bord_buut"> Add Products</button></a>
+      <a href="{{url_for('productstatus')}}" class="bord_butt"><button class="bord_buut"> Products Status</button></a>
+      <a href="{{url_for('queries')}}" class="bord_butt"><button class="bord_buut"> Customer Queries</button></a>
+      <a href="{{url_for('adminlogout')}}" class="bord_butt"><button class="bord_buut"> Admin Logout</button></a>
+    </div>
+  </div>
+</body>
+
+</html>

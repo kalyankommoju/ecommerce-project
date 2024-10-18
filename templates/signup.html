@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link  rel='stylesheet' href="{{url_for('static',filename='style.css')}}">
+</head>
+<body class="signup_body">
+    <div class="signup_div">
+        <form class="signup_form" method="POST">
+            <label class="signup_label"><i class="fa-solid fa-user"> Username</i></label>
+            <input type="text" class="signup_input" name="username" placeholder="Create Your Username"/>
+            <label class="signup_label"><i class="fa-solid fa-phone"></i> Mobile Number</label>
+            <input type="number" class="signup_input" name="number" placeholder="Enter Moblie Number"/>
+            <label class="signup_label"><i class="fa-solid fa-envelope"></i> Email</label>
+            <input type="text" class="signup_input" name="email" placeholder="Enter Your Email"/>
+            <label class="signup_label"><i class="fa-solid fa-location-dot"></i> Address</label>
+            <input type="text" class="signup_input" name="address" placeholder="Enter Your Address"/>
+            <label class="signup_label"><i class="fa-solid fa-lock"></i> Password</label>
+            <input type="password" class="signup_input" name="password" placeholder="Create Your password"/>
+            <button class="signup_butt"><i class="fa-solid fa-right-to-bracket"></i> Sign up</button>
+        </form>
+        <a href="#" class="dex_but" style="color: white; text-decoration: none;" id="signup_butt">Alredy have an account</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add items</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' href="{{url_for('static',filename='style.css')}}">
+    <style>
+        #options {
+            width: 100%;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        #options:focus {
+            outline: none;
+        }
+
+        .ad_input[type="file"] {
+            padding: 5px;
+            border: none;
+            background-color: #fff;
+        }
+
+        .ad_input[type="file"]::file-selector-button {
+            padding: 5px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 7px;
+            background-color: #4070f4;
+            color: white;
+            cursor: pointer;
+        }
+
+        .ad_input[type="file"]::file-selector-button:hover {
+            background-color: black;
+        }
+
+        #options option[disabled] {
+            color: #ccc;
+        }
+
+        #item_butt {
+            margin-left: 32%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ad_sigup">
+        <h1 style="display: flex; justify-content: center;">UPDATE PRODUCTS</h1>
+
+        <form class="ad_form" method="POST" enctype="multipart/form-data">
+            <div class="signup_input">
+                <input type="text" name="itemname" value="{{data[0]}}" class="ad_input" placeholder="Enter item name">
+            </div>
+
+            <div class="signup_input">
+                <input type="text" name="discript" value="{{data[1]}}" placeholder="Enter item discription"
+                    class="ad_input">
+            </div>
+
+            <div class="signup_input">
+                <input type="number" name="quantity" value="{{data[2]}}" placeholder="Enter item quantity"
+                    class="ad_input">
+            </div>
+
+            <div class="signup_input">
+                <select id="options" name="category" value="{{data[3]}}" required>
+                    <option value="" disabled selected hidden>Select Your Category Here</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="home">Home Applainces</option>
+                    <option value="grocery">Grocery</option>
+                    <option value="electronics">Electronics</option>
+                </select><br />
+            </div>
+
+            <div class="signup_input">
+                <input type="number" name="price" value="{{data[4]}}" placeholder="Enter item price" class="ad_input">
+            </div>
+
+            <div class="signup_input">
+                <input type="file" name="file" value="" class="ad_input" required>
+            </div>
+
+            <button class="ad_butt" id="item_butt">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

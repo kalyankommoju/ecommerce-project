@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link  rel='stylesheet' href="{{url_for('static',filename='style.css')}}">
+</head>
+<body class="index_body">
+    <div class="index_div">
+        <h1 style="color: white;">Welcome To My Shopping website</h1><br>
+    </div>
+    <div class="dex_div2">
+        <h2 style="color: white;">Shop Now</h2>
+        <a href="{{url_for('home')}}" class="dex_butt"><button class="index_butt" style="cursor: pointer;">Explore Now</button></a>
+    </div>
+</body>
+</html>

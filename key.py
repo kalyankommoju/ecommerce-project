@@ -1,0 +1,5 @@
+secret_key=b'\xd8d8e7\x80\xd3c\xd7\xb3gz'
+salt='confirmation'
+salt2='uverifcation'
+salt3='otpverifcation'
+salt4='forgotadmin'
